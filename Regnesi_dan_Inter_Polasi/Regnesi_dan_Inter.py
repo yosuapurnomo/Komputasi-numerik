@@ -15,7 +15,7 @@ class Regnesi_linier:
         self.X.append(float(input(f"Input X ke {(len(self.X) + 1)} =  ")))
         self.y.append(float(input(f"Input Y ke {len(self.y) + 1} = ")))
         if input("ulang = ") is "y":
-            return self.setXY()
+            self.setXY()
 
     def setValue(self):
         self.sumY = numpy.sum(self.y)

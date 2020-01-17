@@ -9,10 +9,10 @@ class regula:
         self.coun = 0
 
     def proses(self):
-        self.Fx1 = round(self.n(self.x1), 2)
-        self.Fx2 = round(self.n(self.x2), 2)
+        self.Fx1 = round(self.n(self.x1), 3)
+        self.Fx2 = round(self.n(self.x2), 3)
         self.x3 = round((self.x1 * self.Fx2) - (self.x2 * self.Fx2) / (self.Fx2 - self.Fx1), 2)
-        self.Fx3 = round(self.n(self.x3), 2)
+        self.Fx3 = round(self.n(self.x3), 3)
         self.coun += 1
         print(f"""Interasi ke {self.coun}
 Fx1 = {self.Fx1}    Fx2 = {self.Fx2}    X3 = {self.x3}      Fx3 = {self.Fx3}""")

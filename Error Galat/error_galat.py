@@ -6,7 +6,7 @@ class error:
         self.awal = []
         self.prediksi = []
         self.error_selisi = []
-        self.error_relatif = []
+        self.error_absolut = []
         self.jumlah_error = None
 
     def setError(self):
@@ -26,21 +26,21 @@ class error:
         print("Error Prediksi")
         for i in range(0, len(self.awal)):
             self.error_selisi.append(abs(self.awal[i]-self.prediksi[i]))
-        print(self.error_selisi)
+        print("Error Selisi = ", self.error_selisi)
 
     def setError_relativ(self):
         print("Error Relativ")
         for i in range(0, len(self.awal)):
-            self.error_relatif.append(round(((self.error_selisi[i]/self.awal[i])*100), 1))
-        print(self.error_relatif)
-        # self.jumlah_error = numpy.array(self.error_relatif)
-        hasil = numpy.sum(self.error_relatif)
-        print(hasil / len(self.awal))
+            self.error_absolut.append(round(((self.error_selisi[i] / self.awal[i]) * 100), 1))
+        print("Error Relatif = ", self.error_absolut)
+        # self.jumlah_error = numpy.array(self.error_absolut)
+        # hasil = numpy.sum(self.error_absolut)
+        # print("", hasil / len(self.awal))
     def Mad(self):
         self.mad = numpy.sum(self.error_selisi) * (1/len(self.awal))
         print(f"Hasil Mad = {self.mad}")
     def Made(self):
-        self.made = numpy.sum(self.error_relatif) * (1/len(self.awal))
+        self.made = numpy.sum(self.error_absolut) * (1 / len(self.awal))
         print(f"Hasil Made = {self.made}")
 
 
